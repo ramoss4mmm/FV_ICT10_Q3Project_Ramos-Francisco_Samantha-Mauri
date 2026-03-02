@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>ICT 10 PYTHON</title>
+<style>
+    body{
+        background-color: #FFF1CB;
+        color: #B7A3E3;
+        font-weight: bold;
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
+    #container1{
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #ffdd81;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 800px;
+    }
+    #container2{
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px #ffdd81;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 800px;
+    }
+    .navbar {
+        background-color: #C2E2FA;
+        height: 80px;
+	}
+    #textofnav{
+		color: #F39EB6;
+		font-family: "Lucida Console", "Courier New", monospace;
+		font-weight: bold;
+		font-size: 20px;
+		position: relative;
+	}
+	#textofnav::after{
+		content: '';
+		height: 4px;
+		width: 0%;
+		margin: 0 auto;
+		background-color: #F39EB6;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		transition: all 0.3s;
+	}
+	#textofnav:hover::after{
+		width: 100%;
+	}
+</style>
+<body>
+<nav class="navbar navbar-expand-md navbar-light fixed-top">
+		
+	<div class="container-fluid">
+		<a class="navbar-brand" href="signup.html" id="textofnav">Intramurals</a>
+		
+		<div class="collapse navbar-collapse">
+			<ul class="navbar-nav mx-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="signup.html" id="textofnav">Sign Up</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="teamchecker.html" id="textofnav">Team Checker</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="listofplayers.html" id="textofnav">List of players</a>
+				</li>
+			</ul>
+			
+			<form class="d-flex">
+				<input class="form-control" type="search" placeholder="Search...">
+				<button class="btn btn-default" type="submit">Seach</button>
+			</form>
+		</div>
+
+	</div>
+	</nav>
+
+<br><br><br><br>
+
+<div id="container1">
+    <h1>Intramurals Team</h1>
+    <!-- asks the user if they are done with the online registration-->
+    <h3>Are you done with the online regristration?</h3>
+        <input class="form-check-input" type="radio" id="registered" name="registration" value="registered"> 
+        <label class="form-check-label" for="registered">Yes</label>
+        <input class="form-check-input" type="radio" id="notregistered" name="registration" value="notregistered"> 
+        <label class="form-check-label" for="notregistered">No</label>
+
+    <br><br>
+
+    <!-- asks the user if they have a medical clearance -->
+    <h3>Do you have a medical clearance?</h3>
+        <input class="form-check-input" type="radio" id="medyes" name="med" value="Yes"> 
+        <label class="form-check-label" for="med">Yes</label>
+        <input class="form-check-input" type="radio" id="medno" name="med" value="No"> 
+        <label class="form-check-label" for="medno">No</label>
+
+    <br><br>
+
+    <!-- selection for the users grade level -->
+    <h3>What is your grade level?</h3>
+        <select id="level" class="form-select">
+            <option selected disabled>Select a Grade Level...</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
+    
+    <br><br>
+
+    <!-- selection for the users section -->
+    <h3>What is your section?</h3>
+        <select id="section" class="form-select">
+            <option selected disabled>Select a Grade Level...</option>
+            <option>Emerald</option>
+            <option>Ruby</option>
+            <option>Sapphire</option>
+            <option>Topaz</option>
+            <option>Jade</option>
+        </select>
+
+<br>
+<!-- runs the code -->
+<button type="submit" class="btn btn-default" py-click="intramsteam" id="button1">Sign Up</button>
+<!-- displays the Intramurals team -->
+<p id="output1"></p>
+</div>
+
+    <br><br>
+    <script type="py" src="teamchecker.py"></script>
+    <a href="https://docs.google.com/document/d/1BCE9QhMGHN0qcP1UtUvApjcJ5XmHwDI5nQL0llIVBEw/edit?usp=sharing" target="new" style="font-size: 20px;">Sources</a>
+</body>
+</head>
+</html>
